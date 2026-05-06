@@ -396,3 +396,13 @@ body.dark-mode .profile-photo {
     row-gap: 4px;
   }
 }
+
+/* Páginas internas sem foto lateral */
+.page-only {
+  max-width: 980px;
+  padding-top: 46px;
+}
+
+.full-content {
+  max-width: 760px;
+}

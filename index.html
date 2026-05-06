@@ -58,12 +58,12 @@
       </div>
 
       <div class="topbar-right">
-        <a href="#about" class="active">About</a>
-        <a href="#cv">CV</a>
-        <a href="#publications">Publications</a>
-        <a href="#teaching">Teaching</a>
-        <a href="#projects">Projects</a>
-        <a href="#talks">Talks</a>
+        <a href="index.html" class="active">About</a>
+        <a href="cv.html">CV</a>
+        <a href="publications.html">Publications</a>
+        <a href="teaching.html">Teaching</a>
+        <a href="projects.html">Projects</a>
+        <a href="talks.html">Talks</a>
 
         <button class="theme-toggle" id="theme-toggle" aria-label="Alternar modo escuro">
           <i class="fa-solid fa-moon"></i>
@@ -163,26 +163,6 @@
           </ul>
         </section>
 
-        <section class="section" id="publications">
-          <h2>Publications</h2>
-          <p>Em breve.</p>
-        </section>
-
-        <section class="section" id="teaching">
-          <h2>Teaching</h2>
-          <p>Em breve.</p>
-        </section>
-
-        <section class="section" id="projects">
-          <h2>Projects</h2>
-          <p>Em breve.</p>
-        </section>
-
-        <section class="section" id="talks">
-          <h2>Talks</h2>
-          <p>Em breve.</p>
-        </section>
-
         <section class="section">
           <p class="older-news">For older news, check <a href="#">here</a>.</p>
 
@@ -241,35 +221,8 @@
     </section>
   </main>
 
-  <!-- Script do modo escuro -->
-  <script>
-    const toggleButton = document.getElementById("theme-toggle");
-    const toggleIcon = toggleButton.querySelector("i");
-
-    const savedTheme = localStorage.getItem("theme");
-
-    if (savedTheme === "dark") {
-      document.body.classList.add("dark-mode");
-      toggleIcon.classList.remove("fa-moon");
-      toggleIcon.classList.add("fa-sun");
-    }
-
-    toggleButton.addEventListener("click", () => {
-      document.body.classList.toggle("dark-mode");
-
-      const isDark = document.body.classList.contains("dark-mode");
-
-      if (isDark) {
-        localStorage.setItem("theme", "dark");
-        toggleIcon.classList.remove("fa-moon");
-        toggleIcon.classList.add("fa-sun");
-      } else {
-        localStorage.setItem("theme", "light");
-        toggleIcon.classList.remove("fa-sun");
-        toggleIcon.classList.add("fa-moon");
-      }
-    });
-  </script>
+  #Modo Escuro
+  <script src="theme.js"></script>
 
 </body>
 </html>
