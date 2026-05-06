@@ -191,3 +191,12 @@ a:hover {
     font-weight: 600;
   }
 }
+
+.profile-photo {
+  width: 145px;
+  height: 145px;
+  object-fit: cover;
+  border-radius: 50%;
+  display: block;
+  margin-bottom: 22px;
+}
