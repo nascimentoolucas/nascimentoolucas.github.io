@@ -6,6 +6,7 @@
 
 html {
   font-size: 16px;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -17,14 +18,96 @@ body {
   line-height: 1.45;
 }
 
-/* Página centralizada */
+/* =========================
+   BARRA SUPERIOR
+========================= */
+
+.topbar {
+  width: 100%;
+  border-bottom: 1px solid #dddddd;
+  background: #ffffff;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.topbar-inner {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 12px 34px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 22px;
+}
+
+.topbar-left,
+.topbar-right {
+  display: flex;
+  align-items: center;
+}
+
+.topbar-left {
+  gap: 9px;
+}
+
+.topbar-right {
+  gap: 17px;
+}
+
+.topbar-left a {
+  color: #111111;
+  font-size: 22px;
+  line-height: 1;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+}
+
+.topbar-left a:hover {
+  color: #d02ac2;
+}
+
+.topbar-right a {
+  color: #444444;
+  font-size: 16px;
+  font-weight: 400;
+  text-decoration: none;
+}
+
+.topbar-right a:hover {
+  color: #d02ac2;
+}
+
+.topbar-right a.active {
+  color: #d02ac2;
+  font-weight: 500;
+}
+
+.theme-toggle {
+  background: none;
+  border: none;
+  color: #111111;
+  font-size: 18px;
+  cursor: pointer;
+  padding: 0;
+  line-height: 1;
+}
+
+.theme-toggle:hover {
+  color: #d02ac2;
+}
+
+/* =========================
+   PÁGINA PRINCIPAL
+========================= */
+
 .container {
   max-width: 980px;
   margin: 0 auto;
-  padding: 16px 34px 48px;
+  padding: 46px 34px 48px;
 }
 
-/* Cabeçalho */
 .header {
   margin-bottom: 22px;
 }
@@ -65,7 +148,7 @@ body {
   width: 232px;
 }
 
-/* Foto retangular */
+/* Foto */
 .profile-photo {
   width: 232px;
   height: 284px;
@@ -122,6 +205,7 @@ a:hover {
 /* Seções */
 .section {
   margin-top: 30px;
+  scroll-margin-top: 84px;
 }
 
 .section h2 {
@@ -207,11 +291,82 @@ li {
   font-size: 15px;
 }
 
-/* Celular */
+/* =========================
+   MODO ESCURO
+========================= */
+
+body.dark-mode {
+  background: #121212;
+  color: #e8e8e8;
+}
+
+body.dark-mode .topbar {
+  background: #121212;
+  border-bottom: 1px solid #333333;
+}
+
+body.dark-mode .topbar-left a,
+body.dark-mode .theme-toggle {
+  color: #f1f1f1;
+}
+
+body.dark-mode .topbar-right a {
+  color: #d8d8d8;
+}
+
+body.dark-mode .topbar-right a:hover,
+body.dark-mode .topbar-right a.active,
+body.dark-mode .topbar-left a:hover,
+body.dark-mode .theme-toggle:hover {
+  color: #ff4eea;
+}
+
+body.dark-mode .side-phrases {
+  color: #f1f1f1;
+}
+
+body.dark-mode a {
+  color: #ff4eea;
+}
+
+body.dark-mode .date,
+body.dark-mode .footer {
+  color: #bbbbbb;
+}
+
+body.dark-mode .footer {
+  border-top: 1px solid #333333;
+}
+
+body.dark-mode .footer a {
+  color: #f1f1f1;
+}
+
+body.dark-mode .profile-photo {
+  box-shadow: 0 2px 12px rgba(255, 255, 255, 0.15);
+}
+
+/* =========================
+   RESPONSIVIDADE
+========================= */
+
+@media (max-width: 860px) {
+  .topbar-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .topbar-right {
+    flex-wrap: wrap;
+    gap: 13px;
+  }
+}
+
 @media (max-width: 760px) {
   .container {
     max-width: 100%;
-    padding: 20px;
+    padding: 28px 20px 44px;
   }
 
   .header h1 {
