@@ -1,36 +1,45 @@
+:root {
+  --text: #111111;
+  --muted: #555555;
+  --link: #d02ac2;
+  --border: #dddddd;
+  --background: #ffffff;
+}
+
 * {
   box-sizing: border-box;
 }
 
 body {
   margin: 0;
-  background: #ffffff;
-  color: #000000;
+  background: var(--background);
+  color: var(--text);
   font-family: Arial, Helvetica, sans-serif;
-  line-height: 1.45;
+  line-height: 1.55;
 }
 
+/* Página geral */
 .container {
-  width: 100%;
-  max-width: 1050px;
-  margin: 0;
-  padding: 14px 32px;
+  max-width: 1160px;
+  margin: 0 auto;
+  padding: 18px 42px 40px;
 }
 
+/* Cabeçalho igual ao modelo */
 .header {
-  margin-bottom: 18px;
+  margin-bottom: 22px;
 }
 
 .header h1 {
-  font-size: 38px;
+  font-size: 40px;
   font-weight: 300;
-  margin: 0 0 8px 0;
+  margin: 0 0 4px;
   line-height: 1.1;
 }
 
 .subtitle {
   font-size: 16px;
-  margin: 0 0 3px 0;
+  margin: 0;
 }
 
 .location {
@@ -38,20 +47,19 @@ body {
   margin: 0;
 }
 
-/* AQUI ESTÁ O LAYOUT CORRETO: FOTO À ESQUERDA, TEXTO À DIREITA */
+/* Duas colunas */
 .main-grid {
   display: grid;
   grid-template-columns: 232px 1fr;
-  column-gap: 16px;
+  column-gap: 28px;
   align-items: start;
 }
 
-/* COLUNA DA FOTO */
+/* Coluna esquerda */
 .sidebar {
   width: 232px;
 }
 
-/* FOTO RETANGULAR, NÃO CIRCULAR */
 .profile-photo {
   width: 232px;
   height: 284px;
@@ -59,31 +67,30 @@ body {
   object-position: center;
   display: block;
   border-radius: 3px;
-  margin: 0 0 18px 0;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.18);
+  margin-bottom: 18px;
 }
 
-/* FRASES ABAIXO DA FOTO */
 .side-phrases {
   font-family: "Courier New", Courier, monospace;
-  font-size: 15px;
+  font-size: 16px;
   line-height: 1.45;
-  font-weight: 700;
+  font-weight: 600;
 }
 
 .side-phrases p {
-  margin: 0 0 4px 0;
+  margin: 0 0 5px;
 }
 
-/* COLUNA DO TEXTO */
+/* Conteúdo principal */
 .content {
-  max-width: 730px;
+  max-width: 820px;
   font-size: 16px;
-  padding-top: 0;
 }
 
 .content p {
-  margin: 0 0 18px 0;
+  margin-top: 0;
+  margin-bottom: 18px;
   text-align: justify;
 }
 
@@ -91,6 +98,16 @@ strong {
   font-weight: 700;
 }
 
+a {
+  color: var(--link);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Seções */
 .section {
   margin-top: 28px;
 }
@@ -98,7 +115,7 @@ strong {
 .section h2 {
   font-size: 24px;
   font-weight: 400;
-  margin: 0 0 14px 0;
+  margin: 0 0 14px;
 }
 
 .item {
@@ -107,17 +124,17 @@ strong {
 
 .item h3 {
   font-size: 16px;
+  margin: 0 0 4px;
   font-weight: 700;
-  margin: 0 0 4px 0;
 }
 
 .item p {
-  margin: 0 0 4px 0;
+  margin: 0 0 5px;
 }
 
 ul {
-  padding-left: 0;
   list-style: none;
+  padding-left: 0;
   margin: 0;
 }
 
@@ -125,38 +142,35 @@ li {
   margin-bottom: 4px;
 }
 
-a {
-  color: #d02ac2;
-  text-decoration: none;
+.older-news {
+  margin-bottom: 12px;
 }
 
-a:hover {
-  text-decoration: underline;
-}
-
+/* Announcements */
 .announcement {
   display: grid;
-  grid-template-columns: 80px 1fr;
+  grid-template-columns: 82px 1fr;
   column-gap: 18px;
   margin-bottom: 16px;
 }
 
 .date {
-  color: #555555;
-  font-size: 15px;
+  color: var(--muted);
   line-height: 1.25;
+  font-size: 15px;
 }
 
 .announcement-text {
   font-size: 15px;
 }
 
+/* Rodapé */
 .footer {
   margin-top: 42px;
   padding-top: 18px;
-  border-top: 1px solid #dddddd;
+  border-top: 1px solid var(--border);
   text-align: center;
-  color: #555555;
+  color: var(--muted);
 }
 
 .footer a {
@@ -170,10 +184,14 @@ a:hover {
   font-size: 14px;
 }
 
-/* CELULAR */
+/* Celular */
 @media (max-width: 760px) {
   .container {
     padding: 20px;
+  }
+
+  .header h1 {
+    font-size: 34px;
   }
 
   .main-grid {
@@ -181,11 +199,21 @@ a:hover {
   }
 
   .sidebar {
+    width: 100%;
+    margin-bottom: 28px;
+  }
+
+  .profile-photo {
     width: 232px;
-    margin-bottom: 24px;
+    height: 284px;
   }
 
   .content {
     max-width: 100%;
+  }
+
+  .announcement {
+    grid-template-columns: 1fr;
+    row-gap: 4px;
   }
 }
